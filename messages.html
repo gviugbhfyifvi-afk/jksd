@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages - Aipreneurs Global Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">Aipreneurs</div>
+      </div>
+      <nav class="sidebar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard/admin-dashboard.html">Dashboard</a></li>
+        <li><a href="create-announcement.html">Announcements</a></li>
+        <li><a href="messages.html" class="active">Messages</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Navbar -->
+      <nav class="top-navbar">
+        <div class="navbar-title">Messages</div>
+        <div class="navbar-user">
+          <div class="user-avatar">AU</div>
+          <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div class="dashboard-content">
+        <div class="dashboard-header">
+          <h1>Messages</h1>
+          <p>Communicate with other participants and staff</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div style="margin-bottom: 2rem; display: flex; gap: 1rem;">
+            <input type="text" placeholder="Search messages..." style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border-gray); border-radius: 6px;">
+            <a href="#" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Compose</a>
+          </div>
+
+          <ul class="message-list">
+            <li class="message-item">
+              <div class="message-header">
+                <div class="message-from">Sarah Johnson</div>
+                <div class="message-time">Today 2:30 PM</div>
+              </div>
+              <div class="message-subject">Project Collaboration Request</div>
+              <div class="message-preview">Hi, I'm interested in joining your team for the AI health monitoring project. I have experience with machine learning...</div>
+            </li>
+
+            <li class="message-item">
+              <div class="message-header">
+                <div class="message-from">Admin Team</div>
+                <div class="message-time">Yesterday 10:00 AM</div>
+              </div>
+              <div class="message-subject">Important: Submission Deadline Extended</div>
+              <div class="message-preview">We are extending the project submission deadline by 3 days due to technical difficulties. The new deadline is May 25...</div>
+            </li>
+
+            <li class="message-item">
+              <div class="message-header">
+                <div class="message-from">Mentor - Dr. James Wilson</div>
+                <div class="message-time">May 19 3:45 PM</div>
+              </div>
+              <div class="message-subject">Mentoring Session - Follow Up Notes</div>
+              <div class="message-preview">Great work on your project presentation! Here are some suggestions for improvement regarding your machine learning model...</div>
+            </li>
+
+            <li class="message-item">
+              <div class="message-header">
+                <div class="message-from">Coordinator - Asia Region</div>
+                <div class="message-time">May 18 5:20 PM</div>
+              </div>
+              <div class="message-subject">Team Registration Confirmed</div>
+              <div class="message-preview">Your team has been successfully registered for Aipreneurs Global Challenge 2025. You have access to the platform...</div>
+            </li>
+
+            <li class="message-item">
+              <div class="message-header">
+                <div class="message-from">Jury Member - Prof. Emily Chen</div>
+                <div class="message-time">May 17 11:15 AM</div>
+              </div>
+              <div class="message-subject">Feedback on Your Project Proposal</div>
+              <div class="message-preview">I've reviewed your project proposal. It's innovative, but I'd like to see more details on the data preprocessing steps...</div>
+            </li>
+
+            <li class="message-item">
+              <div class="message-header">
+                <div class="message-from">Support Team</div>
+                <div class="message-time">May 16 8:00 PM</div>
+              </div>
+              <div class="message-subject">Technical Support - Account Issues Resolved</div>
+              <div class="message-preview">Your account issue has been resolved. You can now access all platform features. Please clear your browser cache if needed...</div>
+            </li>
+          </ul>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <a href="#" class="btn btn-secondary">Load More Messages</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

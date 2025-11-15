@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Submission - Aipreneurs Global Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">Aipreneurs</div>
+      </div>
+      <nav class="sidebar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard/jury-dashboard.html">Dashboard</a></li>
+        <li><a href="create-announcement.html">Announcements</a></li>
+        <li><a href="review-submission.html" class="active">Review Submissions</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Navbar -->
+      <nav class="top-navbar">
+        <div class="navbar-title">Review Submissions</div>
+        <div class="navbar-user">
+          <div class="user-avatar">JM</div>
+          <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div class="dashboard-content">
+        <div class="dashboard-header">
+          <h1>Review Submissions</h1>
+          <p>Evaluate and provide feedback on submitted projects</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+          <!-- Project Details -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+              <div>
+                <h3 class="card-header">AI-Powered Health Monitoring System</h3>
+                <p style="margin: 0; color: var(--text-gray);">Submitted by: Innovation Hub Team</p>
+              </div>
+              <span class="badge badge-warning">Pending Review</span>
+            </div>
+
+            <p><strong>Category:</strong> Healthcare & Wellness</p>
+            <p><strong>Submission Date:</strong> May 20, 2025</p>
+            <p><strong>GitHub:</strong> <a href="#">github.com/team/health-ai</a></p>
+            <p><strong>Demo:</strong> <a href="#">health-ai-demo.com</a></p>
+
+            <div style="background: var(--light-gray); padding: 1rem; border-radius: 6px; margin: 1rem 0;">
+              <h5 style="margin-top: 0;">Project Description</h5>
+              <p style="margin: 0;">This project leverages machine learning to monitor vital signs and predict potential health issues before they become critical. The system uses wearable sensors and advanced algorithms to provide real-time health insights.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <a href="#" class="btn btn-secondary" style="text-align: center;">View Code</a>
+              <a href="#" class="btn btn-secondary" style="text-align: center;">View Demo</a>
+            </div>
+          </div>
+
+          <!-- Evaluation Form -->
+          <div class="form-card">
+            <h3 class="card-header" style="margin-bottom: 1.5rem;">Evaluation Form</h3>
+
+            <div class="form-group">
+              <label for="innovation-score">Innovation & Creativity (0-10)</label>
+              <div style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 0.5rem;">
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="1" style="cursor: pointer;"> <span>1</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="2" style="cursor: pointer;"> <span>2</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="3" style="cursor: pointer;"> <span>3</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="4" style="cursor: pointer;"> <span>4</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="5" style="cursor: pointer;"> <span>5</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="6" style="cursor: pointer;"> <span>6</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="7" style="cursor: pointer;"> <span>7</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="8" style="cursor: pointer;"> <span>8</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="9" style="cursor: pointer;"> <span>9</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="innovation" value="10" style="cursor: pointer;"> <span>10</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="technical-score">Technical Implementation (0-10)</label>
+              <div style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 0.5rem;">
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="1" style="cursor: pointer;"> <span>1</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="2" style="cursor: pointer;"> <span>2</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="3" style="cursor: pointer;"> <span>3</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="4" style="cursor: pointer;"> <span>4</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="5" style="cursor: pointer;"> <span>5</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="6" style="cursor: pointer;"> <span>6</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="7" style="cursor: pointer;"> <span>7</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="8" style="cursor: pointer;"> <span>8</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="9" style="cursor: pointer;"> <span>9</span>
+                </label>
+                <label style="text-align: center; cursor: pointer;">
+                  <input type="radio" name="technical" value="10" style="cursor: pointer;"> <span>10</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="impact-score">Real-world Impact (0-10)</label>
+              <select id="impact-score" name="impact" required>
+                <option value="">Select score</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 - Average</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 - Excellent</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="feedback">Feedback & Comments</label>
+              <textarea id="feedback" name="feedback" placeholder="Provide constructive feedback for the team..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" onclick="submitReview(event)">Submit Review</button>
+            <a href="#" class="btn btn-secondary btn-block" style="margin-top: 1rem;">View Next Submission</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    function submitReview(event) {
+      event.preventDefault();
+      showSuccess('Review submitted successfully! Moving to next submission...');
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

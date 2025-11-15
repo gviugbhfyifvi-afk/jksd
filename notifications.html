@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - Aipreneurs Global Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">Aipreneurs</div>
+      </div>
+      <nav class="sidebar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard/admin-dashboard.html">Dashboard</a></li>
+        <li><a href="create-announcement.html">Announcements</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="notifications.html" class="active">Notifications</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Navbar -->
+      <nav class="top-navbar">
+        <div class="navbar-title">Notifications</div>
+        <div class="navbar-user">
+          <div class="user-avatar">AU</div>
+          <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div class="dashboard-content">
+        <div class="dashboard-header">
+          <h1>Notifications</h1>
+          <p>Stay updated with important announcements and messages</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+            <button class="btn btn-primary" style="flex: 1;">All</button>
+            <button class="btn btn-secondary" style="flex: 1;">Unread</button>
+            <button class="btn btn-secondary" style="flex: 1;">Important</button>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">Project Submission Received</div>
+              <div class="notification-time">2 minutes ago</div>
+            </div>
+            <div class="notification-content">Your project has been successfully submitted. Jury will review it within 7 days.</div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">Event Timeline Update</div>
+              <div class="notification-time">1 hour ago</div>
+            </div>
+            <div class="notification-content">Important update: Project evaluation phase has been extended by 3 days.</div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">New Feedback Received</div>
+              <div class="notification-time">3 hours ago</div>
+            </div>
+            <div class="notification-content">Jury member has provided feedback on your project. Check the review section for details.</div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">Team Member Added</div>
+              <div class="notification-time">Yesterday</div>
+            </div>
+            <div class="notification-content">Sarah Johnson has joined your team as a Designer.</div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">Mentoring Session Scheduled</div>
+              <div class="notification-time">2 days ago</div>
+            </div>
+            <div class="notification-content">Your mentoring session is scheduled for May 22 at 3 PM UTC.</div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">Platform Announcement</div>
+              <div class="notification-time">3 days ago</div>
+            </div>
+            <div class="notification-content">Welcome to Aipreneurs Global Challenge 2025! Get ready to showcase your innovation.</div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">Resource Available</div>
+              <div class="notification-time">4 days ago</div>
+            </div>
+            <div class="notification-content">New training materials for machine learning have been added to the resources section.</div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title">Registration Confirmation</div>
+              <div class="notification-time">1 week ago</div>
+            </div>
+            <div class="notification-content">Your registration for Aipreneurs Global Challenge 2025 has been confirmed.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

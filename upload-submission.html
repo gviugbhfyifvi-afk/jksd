@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Submission - Aipreneurs Global Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">Aipreneurs</div>
+      </div>
+      <nav class="sidebar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard/student-dashboard.html">Dashboard</a></li>
+        <li><a href="create-announcement.html">Announcements</a></li>
+        <li><a href="upload-submission.html" class="active">Submit Project</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Navbar -->
+      <nav class="top-navbar">
+        <div class="navbar-title">Upload Submission</div>
+        <div class="navbar-user">
+          <div class="user-avatar">SU</div>
+          <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div class="dashboard-content">
+        <div class="dashboard-header">
+          <h1>Submit Your Project</h1>
+          <p>Upload your AI innovation project for evaluation</p>
+        </div>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+          <form class="form-card" onsubmit="handleSubmission(event)">
+            <h3 class="card-header" style="margin-bottom: 1.5rem;">Project Submission Form</h3>
+
+            <div class="form-group">
+              <label for="project-title">Project Title</label>
+              <input type="text" id="project-title" name="title" placeholder="Enter your project title" required>
+            </div>
+
+            <div class="form-group">
+              <label for="project-description">Project Description</label>
+              <textarea id="project-description" name="description" placeholder="Describe your project, approach, and impact..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Project Category</label>
+              <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="healthcare">Healthcare & Wellness</option>
+                <option value="education">Education & Learning</option>
+                <option value="sustainability">Sustainability & Environment</option>
+                <option value="finance">Finance & Fintech</option>
+                <option value="agriculture">Agriculture & Food</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="team-members">Team Members (comma-separated emails)</label>
+              <textarea id="team-members" name="team" placeholder="your@email.com, member@email.com, ..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="github-link">GitHub Repository Link</label>
+              <input type="url" id="github-link" name="github" placeholder="https://github.com/username/project">
+            </div>
+
+            <div class="form-group">
+              <label for="demo-link">Live Demo Link (Optional)</label>
+              <input type="url" id="demo-link" name="demo" placeholder="https://your-project-demo.com">
+            </div>
+
+            <div class="form-group">
+              <label>Project Files</label>
+              <div class="upload-area" onclick="document.getElementById('file-input').click()">
+                <div class="upload-icon">+</div>
+                <div class="upload-text">Click to upload project files</div>
+                <div class="upload-hint">ZIP, TAR, or individual files (Max 100MB)</div>
+              </div>
+              <input type="file" id="file-input" style="display: none;" accept=".zip,.tar,.gz,.py,.js,.json" multiple>
+            </div>
+
+            <div class="form-group">
+              <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+                <input type="checkbox" required style="margin-right: 0.75rem;">
+                <span>I confirm that this work is original and created by my team</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+                <input type="checkbox" required style="margin-right: 0.75rem;">
+                <span>I agree to the terms and conditions</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">Submit Project</button>
+          </form>
+
+          <div class="card" style="margin-top: 2rem;">
+            <h4 class="card-header">Submission Guidelines</h4>
+            <ul class="feature-list">
+              <li>Ensure all project code is well-documented</li>
+              <li>Include a comprehensive README file</li>
+              <li>Provide clear instructions for running the project</li>
+              <li>Submit before the deadline</li>
+              <li>Include links to any external resources</li>
+              <li>Make sure the live demo is accessible</li>
+              <li>Verify all team member information</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    function handleSubmission(event) {
+      event.preventDefault();
+      const title = document.getElementById('project-title').value;
+      const description = document.getElementById('project-description').value;
+      
+      if (title && description) {
+        showSuccess('Project submitted successfully! Check your email for confirmation.');
+        setTimeout(() => {
+          event.target.reset();
+        }, 500);
+      }
+    }
+
+    document.getElementById('file-input').addEventListener('change', function() {
+      if (this.files.length > 0) {
+        showNotification(`${this.files.length} file(s) selected`, 'success');
+      }
+    });
+  </script>
+</body>
+</html>

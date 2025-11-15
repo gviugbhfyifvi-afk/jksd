@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login - Aipreneurs Global Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);">
+  <header style="background: rgba(255, 255, 255, 0.1); box-shadow: none;">
+    <nav>
+      <a href="index.html" class="logo" style="color: white;">Aipreneurs Global</a>
+      <div class="nav-buttons">
+        <a href="index.html" class="btn btn-secondary" style="color: white; border-color: white;">Back to Home</a>
+      </div>
+    </nav>
+  </header>
+
+  <section style="display: flex; align-items: center; justify-content: center; min-height: 80vh; padding: 2rem;">
+    <div class="card" style="max-width: 450px; width: 100%;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h1 style="color: var(--primary-blue); font-size: 2rem;">Student Login</h1>
+        <p style="color: var(--text-gray);">Join the Aipreneurs challenge</p>
+      </div>
+
+      <form class="login-form" data-role="student" onsubmit="handleStudentLogin(event)">
+        <div class="form-group">
+          <label for="student-email">Email Address</label>
+          <input type="email" id="student-email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="student-password">Password</label>
+          <input type="password" id="student-password" name="password" required>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <label style="display: flex; align-items: center; cursor: pointer;">
+            <input type="checkbox" style="margin-right: 0.5rem;">
+            <span style="font-size: 0.9rem;">Remember me</span>
+          </label>
+          <a href="#" style="font-size: 0.9rem;">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-bottom: 1rem;">Sign In</button>
+      </form>
+
+      <div style="text-align: center; color: var(--text-gray);">
+        <p>Don't have an account? <a href="#" style="color: var(--primary-blue);">Create account</a></p>
+      </div>
+
+      <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-gray); text-align: center; font-size: 0.9rem; color: var(--text-gray);">
+        <p>Other login options:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem;">
+          <a href="volunteer-login.html" class="btn btn-secondary" style="font-size: 0.85rem;">Volunteer</a>
+          <a href="jury-login.html" class="btn btn-secondary" style="font-size: 0.85rem;">Jury</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: rgba(0, 0, 0, 0.2); color: white; padding: 2rem; text-align: center;">
+    <p>&copy; 2025 Aipreneurs Global Challenge. All rights reserved.</p>
+  </footer>
+
+  <script src="js/firebase-auth.js"></script>
+  <script>
+    function handleStudentLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById('student-email').value;
+      const password = document.getElementById('student-password').value;
+      
+      if (email && password) {
+        localStorage.setItem('userRole', 'student');
+        localStorage.setItem('userEmail', email);
+        showSuccess('Student login successful! Redirecting...');
+        setTimeout(() => {
+          window.location.href = 'dashboard/student-dashboard.html';
+        }, 1500);
+      }
+    }
+  </script>
+</body>
+</html>

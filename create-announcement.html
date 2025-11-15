@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Announcement - Aipreneurs Global Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">Aipreneurs</div>
+      </div>
+      <nav class="sidebar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard/admin-dashboard.html">Dashboard</a></li>
+        <li><a href="create-announcement.html" class="active">Announcements</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Navbar -->
+      <nav class="top-navbar">
+        <div class="navbar-title">Create Announcement</div>
+        <div class="navbar-user">
+          <div class="user-avatar">AU</div>
+          <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div class="dashboard-content">
+        <div class="dashboard-header">
+          <h1>Create Announcement</h1>
+          <p>Share important updates with all participants</p>
+        </div>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+          <div class="form-card">
+            <h3 class="card-header" style="margin-bottom: 1.5rem;">New Announcement</h3>
+
+            <form onsubmit="handleAnnouncement(event)">
+              <div class="form-group">
+                <label for="title">Announcement Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter announcement title" required>
+              </div>
+
+              <div class="form-group">
+                <label for="priority">Priority Level</label>
+                <select id="priority" name="priority" required>
+                  <option value="normal">Normal</option>
+                  <option value="high">High</option>
+                  <option value="urgent">Urgent</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="audience">Target Audience</label>
+                <select id="audience" name="audience" required>
+                  <option value="all">All Participants</option>
+                  <option value="students">Students</option>
+                  <option value="volunteers">Volunteers</option>
+                  <option value="coordinators">Coordinators</option>
+                  <option value="jury">Jury Members</option>
+                  <option value="admins">Administrators</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="content">Announcement Content</label>
+                <textarea id="content" name="content" placeholder="Write your announcement here..." required style="min-height: 200px;"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                  <option value="">Select category</option>
+                  <option value="event">Event Update</option>
+                  <option value="deadline">Deadline Extension</option>
+                  <option value="maintenance">System Maintenance</option>
+                  <option value="resource">Resource Available</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+                  <input type="checkbox" checked style="margin-right: 0.75rem;">
+                  <span>Send email notifications</span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: center; cursor: pointer; font-weight: normal;">
+                  <input type="checkbox" style="margin-right: 0.75rem;">
+                  <span>Schedule for later</span>
+                </label>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                <button type="submit" class="btn btn-primary btn-lg">Publish</button>
+                <button type="reset" class="btn btn-secondary btn-lg">Clear</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Recent Announcements -->
+          <div class="card" style="margin-top: 2rem;">
+            <h3 class="card-header" style="margin-bottom: 1.5rem;">Recent Announcements</h3>
+            
+            <div style="border-bottom: 1px solid var(--border-gray); padding-bottom: 1rem; margin-bottom: 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                <h5 style="margin: 0;">Event Timeline Update</h5>
+                <span class="badge badge-warning">High</span>
+              </div>
+              <p style="margin: 0; color: var(--text-gray); font-size: 0.9rem;">Published today at 10:00 AM</p>
+            </div>
+
+            <div style="border-bottom: 1px solid var(--border-gray); padding-bottom: 1rem; margin-bottom: 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                <h5 style="margin: 0;">Submission Deadline Extended</h5>
+                <span class="badge badge-danger">Urgent</span>
+              </div>
+              <p style="margin: 0; color: var(--text-gray); font-size: 0.9rem;">Published yesterday at 2:30 PM</p>
+            </div>
+
+            <div style="border-bottom: 1px solid var(--border-gray); padding-bottom: 1rem; margin-bottom: 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                <h5 style="margin: 0;">Training Resources Available</h5>
+                <span class="badge badge-info">Normal</span>
+              </div>
+              <p style="margin: 0; color: var(--text-gray); font-size: 0.9rem;">Published 3 days ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    function handleAnnouncement(event) {
+      event.preventDefault();
+      const title = document.getElementById('title').value;
+      
+      if (title) {
+        showSuccess('Announcement published successfully!');
+        setTimeout(() => {
+          event.target.reset();
+        }, 500);
+      }
+    }
+  </script>
+</body>
+</html>
